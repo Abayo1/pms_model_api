@@ -47,8 +47,8 @@ bt_model = pickle.load(open('modelSVR_BT.0.1.0.sav','rb'))
 hr_model = pickle.load(open('modelSVR_HR.0.1.0.sav','rb'))
 rr_model = pickle.load(open('modelSVR_RR.0.1.0.sav','rb'))
 spo2_model = pickle.load(open('modelSVR_SPO2.0.1.0.sav','rb'))
-sys_model = pickle.load(open('modelSVR_SYS.0.1.0.sav','rb'))
-dys_model = pickle.load(open('modelSVR_DYS.0.1.0.sav','rb'))
+sys_model = pickle.load(open('modelSVR_SBP.0.1.0.sav','rb'))
+dys_model = pickle.load(open('modelSVR_DBP.0.1.0.sav','rb'))
 
 # Creating an APIs
 
