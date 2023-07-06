@@ -43,12 +43,12 @@ class modelDiastolicPressure_input(BaseModel):
     
     
 # loading the saved models
-bt_model = pickle.load(open('modelSVR_BT.sav','rb'))
-hr_model = pickle.load(open('modelSVR_HR.sav','rb'))
-rr_model = pickle.load(open('modelSVR_RR.sav','rb'))
-spo2_model = pickle.load(open('modelSVR_SPO2.sav','rb'))
-sys_model = pickle.load(open('modelSVR_SYS.sav','rb'))
-dys_model = pickle.load(open('modelSVR_DYS.sav','rb'))
+bt_model = pickle.load(open('modelSVR_BT.0.1.0.sav','rb'))
+hr_model = pickle.load(open('modelSVR_HR.0.1.0.sav','rb'))
+rr_model = pickle.load(open('modelSVR_RR.0.1.0.sav','rb'))
+spo2_model = pickle.load(open('modelSVR_SPO2.0.1.0.sav','rb'))
+sys_model = pickle.load(open('modelSVR_SYS.0.1.0.sav','rb'))
+dys_model = pickle.load(open('modelSVR_DYS.0.1.0.sav','rb'))
 
 # Creating an APIs
 
