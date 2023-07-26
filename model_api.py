@@ -44,12 +44,12 @@ class modelDiastolicPressure_input(BaseModel):
     
     
 # loading the saved models
-bt_model = pickle.load(open(r'C:/Users/Abayo/Desktop/PMS_models_API/models/modelSVR_BT.0.1.0.sav','rb'))
-hr_model = pickle.load(open(r'C:/Users/Abayo/Desktop/PMS_models_API/models/modelSVR_HR.0.1.0.sav','rb'))
-rr_model = pickle.load(open(r'C:/Users/Abayo/Desktop/PMS_models_API/models/modelSVR_RR.0.1.0.sav','rb'))
-spo2_model = pickle.load(open(r'C:/Users/Abayo/Desktop/PMS_models_API/models/modelSVR_SPO2.0.1.0.sav','rb'))
-sys_model = pickle.load(open(r'C:/Users/Abayo/Desktop/PMS_models_API/models/modelSVR_SBP.0.1.0.sav','rb'))
-dys_model = pickle.load(open(r'C:/Users/Abayo/Desktop/PMS_models_API/models/modelSVR_DBP.0.1.0.sav','rb'))
+bt_model = pickle.load(open('modelSVR_BT.0.1.0.sav','rb'))
+hr_model = pickle.load(open('modelSVR_HR.0.1.0.sav','rb'))
+rr_model = pickle.load(open('modelSVR_RR.0.1.0.sav','rb'))
+spo2_model = pickle.load(open('modelSVR_SPO2.0.1.0.sav','rb'))
+sys_model = pickle.load(open('modelSVR_SBP.0.1.0.sav','rb'))
+dys_model = pickle.load(open('modelSVR_DBP.0.1.0.sav','rb'))
 
 # Creating an APIs
 
@@ -72,7 +72,7 @@ def body_temperature_pred(input_parameters: modelTemp_input):
     predict = np.reshape(predict,(-1,1))
     predictionBT = scaler.inverse_transform(predict)
     predictionBT = print(predictionBT)
-    return predictionBT
+    return {predictionBT}
     
 
 @app.post('/heart_rate_pred')
@@ -94,7 +94,7 @@ def heart_rate_pred(input_parameters: modelHeartRate_input):
     predict = np.reshape(predict,(-1,1))
     predictionHR = scaler.inverse_transform(predict)
     predictionHR = print(predictionHR)
-    return predictionHR
+    return {predictionHR}
 
 @app.post('/respiratory_rate_pred')
 
@@ -115,7 +115,7 @@ def respiratory_rate_pred(input_parameters: modelRespiratoryRate_input):
     predict = np.reshape(predict,(-1,1))
     predictionRR = scaler.inverse_transform(predict)
     predictionRR = print(predictionRR)
-    return predictionRR
+    return {predictionRR}
 
 @app.post('/spo2_pred')
 
@@ -136,7 +136,7 @@ def spo2_pred(input_parameters: modelSPO2_input):
     predict = np.reshape(predict,(-1,1))
     predictionSPO2 = scaler.inverse_transform(predict)
     predictionSPO2 = print(predictionSPO2)
-    return predictionSPO2
+    return {predictionSPO2}
 
 @app.post('/systolic_pred')
 
@@ -157,7 +157,7 @@ def sys_pred(input_parameters: modelSystolicPressure_input):
     predict = np.reshape(predict,(-1,1))
     predictionSYS = scaler.inverse_transform(predict)
     predictionSYS = print(predictionSYS)
-    return predictionSYS
+    return {predictionSYS}
 
 @app.post('/diastolic_pred')
 
@@ -178,4 +178,4 @@ def dys_pred(input_parameters: modelDiastolicPressure_input):
     predict = np.reshape(predict,(-1,1))
     predictionDIAS = scaler.inverse_transform(predict)
     predictionDIAS = print(predictionDIAS)
-    return predictionDIAS
+    return {predictionDIAS}
