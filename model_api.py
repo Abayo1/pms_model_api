@@ -53,6 +53,10 @@ dys_model = pickle.load(open('modelSVR_DBP.0.1.0.sav','rb'))
 
 # Creating an APIs
 
+@app.get("/")
+def home():
+    return {"health_check": "OK", "model_version": model_version}
+
 @app.post('/body_temperature_pred')
 
 def body_temperature_pred(input_parameters: modelTemp_input):
