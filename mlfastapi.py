@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 import pickle
 import json
+from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 
 app = FastAPI()
